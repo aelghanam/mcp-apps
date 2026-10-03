@@ -1,5 +1,5 @@
 {
-  "name": "mcp-apps",
+  "name": "cap-mcp-apps",
   "version": "0.1.0",
   "description": "CDS plugin that enriches @cap-js/mcp query tools with an MCP App UI5 table.",
   "main": "cds-plugin.js",
@@ -20,9 +20,13 @@
     "cds",
     "cds-plugin",
     "mcp",
-    "mcp-apps"
+    "cap-mcp-apps"
   ],
   "author": "Abdelrahman Elghannam",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelghanam/mcp-apps.git"
+  },
   "peerDependencies": {
     "@cap-js/mcp": ">=1.4.0",
     "@sap/cds": ">=9",
@@ -40,8 +44,8 @@
   },
   "cds": {
     "requires": {
-      "mcp-apps-vocab": {
-        "model": "mcp-apps/vocab"
+      "cap-mcp-apps-vocab": {
+        "model": "cap-mcp-apps/vocab"
       }
     },
     "mcp": {

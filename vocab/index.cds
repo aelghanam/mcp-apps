@@ -1,5 +1,5 @@
 /**
- * Vocabulary for the `mcp-apps` CDS plugin action UI annotations.
+ * Vocabulary for the `cap-mcp-apps` CDS plugin action UI annotations.
  *
  * Apply on unbound service actions:
  *

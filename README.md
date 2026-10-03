@@ -1,4 +1,4 @@
-# mcp-apps
+# cap-mcp-apps
 
 CDS plugin for CAP Node.js. It enriches [`@cap-js/mcp`](https://www.npmjs.com/package/@cap-js/mcp) **query** tool results with an MCP App (UI5 Web Components table) when the host supports MCP Apps.
 
@@ -7,7 +7,7 @@ CAP loads it automatically. A consuming app only needs this package in `dependen
 ## Install
 
 ```bash
-npm add @cap-js/mcp mcp-apps
+npm add @cap-js/mcp cap-mcp-apps
 ```
 
 From GitHub before it is published to npm:
@@ -15,7 +15,7 @@ From GitHub before it is published to npm:
 ```json
 {
   "dependencies": {
-    "mcp-apps": "github:<owner>/mcp-apps"
+    "cap-mcp-apps": "github:aelghanam/mcp-apps"
   }
 }
 ```
@@ -27,8 +27,8 @@ The plugin contributes the annotation vocabulary in `vocab/` through:
 ```json
 "cds": {
   "requires": {
-    "mcp-apps-vocab": {
-      "model": "mcp-apps/vocab"
+    "cap-mcp-apps-vocab": {
+      "model": "cap-mcp-apps/vocab"
     }
   }
 }
@@ -88,7 +88,7 @@ Only actions the current MCP user may call (`@requires` / `@restrict`) are inclu
 ## Logging
 
 ```js
-const LOG = cds.log('mcp-apps')
+const LOG = cds.log('cap-mcp-apps')
 ```
 
 ```json
@@ -97,7 +97,7 @@ const LOG = cds.log('mcp-apps')
     "log": {
       "[development]": {
         "levels": {
-          "mcp-apps": "debug"
+          "cap-mcp-apps": "debug"
         }
       }
     }
@@ -114,7 +114,7 @@ npm install
 npm run build
 ```
 
-Link it into a CAP app with `"mcp-apps": "file:../mcp-apps"`, then run `cds watch` in that app.
+Link it into a CAP app with `"cap-mcp-apps": "file:../cap-mcp-apps"`, then run `cds watch` in that app.
 
 ## License
 

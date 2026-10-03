@@ -1,7 +1,7 @@
 'use strict'
 
 const cds = require('@sap/cds')
-const LOG = cds.log('mcp-apps')
+const LOG = cds.log('cap-mcp-apps')
 
 /**
  * When enabled, replace the stock MCP protocol adapter with one that

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAP Query Table</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: "72", "72full", "Segoe UI", Arial, Helvetica, sans-serif;
+        --bg: #f5f6f7;
+        --text: #1d2d3e;
+        --label: #556b82;
+        --neg: #bb0000;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1c2228;
+          --text: #eaecee;
+          --label: #a9b4be;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--bg);
+        color: var(--text);
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 1rem;
+        margin-bottom: 0.75rem;
+      }
+      header .spacer { flex: 1 1 auto; }
+      h1 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 700;
+      }
+      .meta {
+        margin: 0;
+        color: var(--label);
+        font-size: 0.8125rem;
+      }
+      .status {
+        margin: 0 0 0.75rem;
+        font-size: 0.8125rem;
+        color: var(--label);
+      }
+      .status.error { color: var(--neg); }
+      .table-shell {
+        overflow: auto;
+        max-height: min(70vh, 520px);
+      }
+      ui5-table {
+        width: 100%;
+      }
+      #toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+      #toolbar:empty { display: none; }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .form-field label {
+        font-size: 0.8125rem;
+        color: var(--label);
+      }
+      .row-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">CAP Query Result</h1>
+      <p id="summary" class="meta">Waiting for query result…</p>
+      <span class="spacer"></span>
+      <ui5-button id="refresh-btn" design="Transparent" disabled>Refresh</ui5-button>
+    </header>
+    <p id="status" class="status">Connecting to host…</p>
+    <div class="table-shell">
+      <ui5-table id="table" accessible-name="Query result" overflow-mode="Scroll" no-data-text="No rows returned."></ui5-table>
+    </div>
+    <div id="toolbar" aria-label="Service actions"></div>
+    <ui5-dialog id="action-dialog" header-text="Action">
+      <div id="action-form"></div>
+      <div slot="footer" style="display:flex;justify-content:flex-end;gap:0.5rem;padding:0.5rem;">
+        <ui5-button id="action-cancel" design="Transparent">Cancel</ui5-button>
+        <ui5-button id="action-confirm" design="Emphasized">Run</ui5-button>
+      </div>
+    </ui5-dialog>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "name": "mcp-apps",
+  "version": "0.1.0",
+  "description": "CDS plugin that enriches @cap-js/mcp query tools with an MCP App UI5 table.",
+  "main": "cds-plugin.js",
+  "files": [
+    "cds-plugin.js",
+    "lib",
+    "assets",
+    "vocab",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "cap",
+    "cds",
+    "cds-plugin",
+    "mcp",
+    "mcp-apps"
+  ],
+  "author": "Abdelrahman Elghannam",
+  "peerDependencies": {
+    "@cap-js/mcp": ">=1.4.0",
+    "@sap/cds": ">=9",
+    "express": ">=4"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.5"
+  },
+  "devDependencies": {
+    "@ui5/webcomponents": "^2.23.2",
+    "esbuild": "^0.28.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "cds": {
+    "requires": {
+      "mcp-apps-vocab": {
+        "model": "mcp-apps/vocab"
+      }
+    },
+    "mcp": {
+      "apps": {
+        "queryTable": true
+      }
+    }
+  },
+  "license": "PolyForm-Small-Business-1.0.0"
+}
